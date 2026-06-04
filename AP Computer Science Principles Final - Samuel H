@@ -2,14 +2,12 @@
 # StudySync - Study Planner
 # AP CSP Final Project
 # ==========================
-
 # Lists (Data Abstraction)
 assignment_names = []
 assignment_subjects = []
 assignment_days_left = []
 assignment_difficulties = []
 assignment_completed = []
-
 # --------------------------
 # Function 1
 # Adds a new assignment
@@ -20,10 +18,6 @@ def add_assignment(name, subject, days_left, difficulty):
     assignment_days_left.append(days_left)
     assignment_difficulties.append(difficulty)
     assignment_completed.append(False)
-
-
-# --------------------------
-
 # --------------------------
 # Function 2
 # Calculates priority
@@ -38,8 +32,6 @@ def calculate_priority(days_left, difficulty):
 
     else:
         return "Low"
-
-
 # --------------------------
 # Function 3
 # Algorithm
@@ -71,6 +63,38 @@ def generate_study_plan():
 
     if active_found == False:
         print("No active assignments.")
+# --------------------------
+# Function 4
+# Marks assignment complete
+# --------------------------
+def mark_complete(index):
+
+    if 0 <= index < len(assignment_completed):
+
+        assignment_completed[index] = True
+        print("Assignment marked complete!")
+
+    else:
+        print("Invalid assignment number.")
+# --------------------------
+# Function 5
+# Displays statistics
+# --------------------------
+def display_stats():
+
+    total = len(assignment_names)
+
+    completed = 0
+
+    for status in assignment_completed:
+
+        if status == True:
+            completed += 1
+
+    print("\n===== STATISTICS =====")
+    print("Total Assignments:", total)
+    print("Completed:", completed)
+    print("Remaining:", total - completed)
 
 
 # --------------------------
