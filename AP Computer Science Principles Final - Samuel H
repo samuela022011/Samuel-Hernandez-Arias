@@ -23,3 +23,54 @@ def add_assignment(name, subject, days_left, difficulty):
 
 
 # --------------------------
+
+# --------------------------
+# Function 2
+# Calculates priority
+# --------------------------
+def calculate_priority(days_left, difficulty):
+
+    if days_left <= 2 or difficulty >= 4:
+        return "High"
+
+    elif days_left <= 5:
+        return "Medium"
+
+    else:
+        return "Low"
+
+
+# --------------------------
+# Function 3
+# Algorithm
+# Contains iteration and selection
+# --------------------------
+def generate_study_plan():
+
+    print("\n===== STUDY PLAN =====")
+
+    active_found = False
+
+    for i in range(len(assignment_names)):      # Iteration
+
+        if assignment_completed[i] == False:    # Selection
+
+            priority = calculate_priority(
+                assignment_days_left[i],
+                assignment_difficulties[i]
+            )
+
+            print(
+                f"{i + 1}. {assignment_names[i]}"
+                f" | Subject: {assignment_subjects[i]}"
+                f" | Due in: {assignment_days_left[i]} days"
+                f" | Priority: {priority}"
+            )
+
+            active_found = True
+
+    if active_found == False:
+        print("No active assignments.")
+
+
+# --------------------------
