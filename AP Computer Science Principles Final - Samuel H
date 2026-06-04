@@ -11,3 +11,15 @@ assignment_difficulties = []
 assignment_completed = []
 
 # --------------------------
+# Function 1
+# Adds a new assignment
+# --------------------------
+def add_assignment(name, subject, days_left, difficulty):
+    assignment_names.append(name)
+    assignment_subjects.append(subject)
+    assignment_days_left.append(days_left)
+    assignment_difficulties.append(difficulty)
+    assignment_completed.append(False)
+
+
+# --------------------------
