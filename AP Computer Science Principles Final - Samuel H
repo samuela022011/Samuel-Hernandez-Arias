@@ -95,6 +95,82 @@ def display_stats():
     print("Total Assignments:", total)
     print("Completed:", completed)
     print("Remaining:", total - completed)
-
-
 # --------------------------
+# Main Program
+# --------------------------
+
+running = True
+
+print("Welcome to StudySync!")
+
+while running:
+
+    print("\n==========================")
+    print("      STUDYSYNC MENU")
+    print("==========================")
+    print("1. Add Assignment")
+    print("2. View Study Plan")
+    print("3. Mark Assignment Complete")
+    print("4. View Statistics")
+    print("5. Exit")
+
+    choice = input("\nChoose an option: ")
+
+    # Add Assignment
+    if choice == "1":
+
+        name = input("Assignment Name: ")
+
+        subject = input("Subject: ")
+
+        days_left = int(
+            input("Days Until Due Date: ")
+        )
+
+        difficulty = int(
+            input("Difficulty (1-5): ")
+        )
+
+        add_assignment(
+            name,
+            subject,
+            days_left,
+            difficulty
+        )
+
+        print("Assignment added successfully!")
+
+    # View Plan
+    elif choice == "2":
+
+        generate_study_plan()
+
+    # Complete Assignment
+    elif choice == "3":
+
+        generate_study_plan()
+
+        if len(assignment_names) > 0:
+
+            assignment_number = int(
+                input(
+                    "\nEnter assignment number to mark complete: "
+                )
+            )
+
+            mark_complete(assignment_number - 1)
+
+    # Statistics
+    elif choice == "4":
+
+        display_stats()
+
+    # Exit
+    elif choice == "5":
+
+        running = False
+        print("Thank you for using StudySync!")
+
+    else:
+
+        print("Invalid option. Please try again.")
