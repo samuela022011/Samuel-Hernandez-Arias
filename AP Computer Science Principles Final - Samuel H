@@ -1,0 +1,13 @@
+# ==========================
+# StudySync - Study Planner
+# AP CSP Final Project
+# ==========================
+
+# Lists (Data Abstraction)
+assignment_names = []
+assignment_subjects = []
+assignment_days_left = []
+assignment_difficulties = []
+assignment_completed = []
+
+# --------------------------
